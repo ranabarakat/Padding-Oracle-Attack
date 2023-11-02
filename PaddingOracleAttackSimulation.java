@@ -73,7 +73,7 @@ public class PaddingOracleAttackSimulation {
                 for (byte k = -128; k <= 127; k++) {
                     ivCpy[m] = k;
                     if (receiver.isDecryptionSuccessful(AESDemo.prepareCiphertext(ivCpy, ciphertextBlocks))) {
-                        // System.out.println("FOUND");
+                        System.out.println("FOUND");
                         fk[m] = (byte) (ivCpy[m] ^ pad);
                         secretMsg[m] = (byte) (fk[m] ^ iv[m]);
                         break;
